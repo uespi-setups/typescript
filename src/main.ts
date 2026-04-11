@@ -1,14 +1,24 @@
 /* eslint-disable no-console */
-import 'dotenv/config'
+import { fileURLToPath } from 'node:url'
 
-const appName = process.env['APP_NAME'] ?? 'template-ts'
-const port = process.env['APP_PORT'] ?? '3030'
-const nodeEnv = process.env['NODE_ENV'] ?? 'dev'
+import { env } from '#src/config/env'
 
-const bootstrap = (): void => {
-  console.log(`[${appName}] starting application`)
-  console.log(`Environment: ${nodeEnv}`)
-  console.log(`Port: ${port}`)
+export const bootstrap = (): void => {
+  console.log(`[${env.appName}] starting application`)
+  console.log(`Environment: ${env.nodeEnv}`)
+  console.log(`Port: ${String(env.appPort)}`)
 }
 
-bootstrap()
+const isEntrypoint = (): boolean => {
+  const entrypoint = process.argv[1]
+
+  if (entrypoint === undefined) {
+    return false
+  }
+
+  return fileURLToPath(import.meta.url) === entrypoint
+}
+
+if (isEntrypoint()) {
+  bootstrap()
+}
