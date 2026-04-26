@@ -43,3 +43,10 @@ pids
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Codex credentials and local state
+.codex/auth.json
+.codex/history.jsonl
+.codex/log/
+.codex/*.log
+

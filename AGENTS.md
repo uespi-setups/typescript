@@ -101,6 +101,24 @@ For small technical tasks with already-clear behavior, implement directly with l
 - inside each feature, group files by code role rather than by a global top-level layer
 - do not create global `domain`, `application`, or `infra` directories for the whole repository unless explicitly required
 
+## Repository quick map
+
+- application entrypoint: `src/main.ts`
+- source code: `src/`
+- automated tests: `test/`
+- documentation and project notes: `doc/`
+
+## Preferred validation flow for this repository
+
+For source-code changes, prefer this order when applicable:
+
+1. targeted test file
+2. `yarn type:check`
+3. `yarn lint`
+4. `yarn test`
+
+Use `yarn check` only when broader validation is justified by the scope.
+
 ## Clean Architecture mapping
 
 Within each feature, use the following terminology and folder mapping:

@@ -12,7 +12,6 @@
   "js/ts.preferences.quoteStyle": "single",
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "js/ts.tsdk.path": "node_modules/typescript/lib",
-  "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.run": "onType",
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "files.eol": "\n",
@@ -27,5 +26,11 @@
     "**/build": true,
     "**/node_modules": true,
     "**/.eslintcache": true
-  }
+  },
+  "github.copilot.enable": {
+    "*": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "settingsSync.ignoredExtensions": ["GitHub.copilot", "GitHub.copilot-chat"]
 }
